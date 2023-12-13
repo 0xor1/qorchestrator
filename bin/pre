@@ -1,0 +1,9 @@
+#!/bin/bash
+
+dotnet build
+dotnet test --no-build -p:CollectCoverage="true" -p:CoverletOutputFormat="cobertura"
+dotnet tool install -g dotnet-reportgenerator-globaltool
+rm -r test_coverage
+reportgenerator -reports:"*\coverage.cobertura.xml" -targetdir:"test_coverage" -reporttypes:Html
+rm */coverage.cobertura.xml
+rm -r */TestResults

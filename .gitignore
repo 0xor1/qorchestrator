@@ -1,0 +1,9 @@
+.idea/
+*/bin/
+obj/
+test_coverage/
+TestResults/
+/packages/
+riderModule.iml
+/_ReSharper.Caches/
+/Scratch
