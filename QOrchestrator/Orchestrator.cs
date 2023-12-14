@@ -149,7 +149,9 @@ public class Orchestrator<T>
                 else
                 {
                     // the current item is smaller than what is already in the buffer so
-                    // break out from processing this pre sorted q
+                    // put the item back in its queue so as to not lose it
+                    // and break out from processing this pre sorted q
+                    q.Enqueue(item);
                     break;
                 }
 
